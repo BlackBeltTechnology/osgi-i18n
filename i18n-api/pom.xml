@@ -3,9 +3,9 @@
 
     <parent>
         <groupId>hu.blackbelt.osgi.i18n</groupId>
-        <artifactId>parent</artifactId>
+        <artifactId>hu.blackbelt.osgi.i18n.parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
-        <relativePath>../parent</relativePath>
+        <relativePath>../</relativePath>
     </parent>
 
     <artifactId>i18n-api</artifactId>
