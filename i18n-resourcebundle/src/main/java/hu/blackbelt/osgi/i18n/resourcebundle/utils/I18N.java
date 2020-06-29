@@ -123,23 +123,23 @@ public final class I18N {
         final int occurrences = split.length - 1;
         switch (occurrences) {
             case 0:
-                if (CharMatcher.JAVA_LOWER_CASE.matchesAllOf(str) && (len == 2 || len == LOC_END_INDEX)) {
+                if (CharMatcher.javaLowerCase().matchesAllOf(str) && (len == 2 || len == LOC_END_INDEX)) {
                     return new Locale(str);
                 }
                 throw new IllegalArgumentException(INVALID_LOCALE_FORMAT + str);
 
             case 1:
-                if (CharMatcher.JAVA_LOWER_CASE.matchesAllOf(split[0])
+                if (CharMatcher.javaLowerCase().matchesAllOf(split[0])
                         && (split[0].length() == 2 || split[0].length() == LOC_END_INDEX)
-                        && split[1].length() == 2 && CharMatcher.JAVA_UPPER_CASE.matchesAllOf(split[1])) {
+                        && split[1].length() == 2 && CharMatcher.javaUpperCase().matchesAllOf(split[1])) {
                     return new Locale(split[0], split[1]);
                 }
                 throw new IllegalArgumentException(INVALID_LOCALE_FORMAT + str);
 
             case 2:
-                if (CharMatcher.JAVA_LOWER_CASE.matchesAllOf(split[0])
+                if (CharMatcher.javaLowerCase().matchesAllOf(split[0])
                         && (split[0].length() == 2 || split[0].length() == LOC_END_INDEX)
-                        && (split[1].length() == 0 || split[1].length() == 2 && CharMatcher.JAVA_UPPER_CASE.matchesAllOf(split[1]))
+                        && (split[1].length() == 0 || split[1].length() == 2 && CharMatcher.javaUpperCase().matchesAllOf(split[1]))
                         && split[2].length() > 0) {
                     return new Locale(split[0], split[1], split[2]);
                 }
