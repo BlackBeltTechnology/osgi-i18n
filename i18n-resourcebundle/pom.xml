@@ -4,7 +4,7 @@
     <parent>
         <groupId>hu.blackbelt.osgi.i18n</groupId>
         <artifactId>hu.blackbelt.osgi.i18n.parent</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <relativePath>../</relativePath>
     </parent>
 
@@ -21,13 +21,6 @@
                 <configuration>
                     <instructions>
                         <Import-Package>
-                            com.google.common.base;version="[14.0,30)",
-                            com.google.common.cache;version="[14.0,30)",
-                            com.google.common.collect;version="[14.0,30)",
-                            com.google.common.io;version="[14.0,30)",
-                            com.google.common.primitives;version="[14.0,30)",
-                            com.google.common.hash;version="[14.0,30)",
-                            com.google.common.util.concurrent;version="[14.0,30)",
                             javax.annotation;version="[1.0,2)",
                             !lombok,
                             *
@@ -55,6 +48,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
+            <version>27.1-jre</version>
         </dependency>
 
         <dependency>
@@ -75,7 +69,6 @@
         <dependency>
             <groupId>hu.blackbelt.osgi.utils</groupId>
             <artifactId>osgi-test</artifactId>
-            <version>1.0.3</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

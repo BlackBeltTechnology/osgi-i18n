@@ -4,7 +4,7 @@
 
     <groupId>hu.blackbelt.osgi.i18n</groupId>
     <artifactId>hu.blackbelt.osgi.i18n.parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>pom</packaging>
 
     <name>OSGi I18N parent</name>
@@ -64,7 +64,7 @@
         <osgi-ds.version>1.3.0</osgi-ds.version>
         <servlet-api.version>2.5</servlet-api.version>
 
-        <guava.version>18.0</guava.version>
+        <guava.version>27.1-jre</guava.version>
         <reflections.version>0.9.10</reflections.version>
 
         <hamcrest.version>2.0.0.0</hamcrest.version>
@@ -86,7 +86,7 @@
         <findbugs.annotations.version>3.0.1</findbugs.annotations.version>
         <qa.failOnError>true</qa.failOnError>
 
-        <lombok.version>1.16.20</lombok.version>
+        <lombok.version>1.18.12</lombok.version>
         <slf4j.version>1.7.25</slf4j.version>
         <junit.version>4.12</junit.version>
 
@@ -141,12 +141,6 @@
             <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>osgi.core</artifactId>
-                <version>${osgi.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.osgi</groupId>
-                <artifactId>osgi.cmpn</artifactId>
                 <version>${osgi.version}</version>
                 <scope>provided</scope>
             </dependency>
@@ -254,6 +248,13 @@
                 <scope>test</scope>
                 <optional>true</optional>
             </dependency>
+            <dependency>
+                <groupId>hu.blackbelt.osgi.utils</groupId>
+                <artifactId>osgi-test</artifactId>
+                <version>1.0.10</version>
+                <scope>test</scope>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -335,6 +336,11 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
                     <version>3.0.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M5</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.felix</groupId>
