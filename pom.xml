@@ -97,7 +97,7 @@
 
         <local-deploy.skip>false</local-deploy.skip>
 
-        <surefire-version>3.0.0-M7</surefire-version>
+        <surefire-version>3.0.0-M9</surefire-version>
         <!--suppress UnresolvedMavenProperty -->
         <logback-test-config>${maven.multiModuleProjectDirectory}/logback-test.xml</logback-test-config>
 
