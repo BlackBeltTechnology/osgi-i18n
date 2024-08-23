@@ -1,5 +1,8 @@
 package hu.blackbelt.osgi.i18n.api;
 
+import java.util.Locale;
+import java.util.function.Supplier;
+
 public interface I18nService {
 
     /**
@@ -8,6 +11,14 @@ public interface I18nService {
      * @param clazz
      */
     <T> T register(Class<T> clazz);
+
+    /**
+     * Register an i18N proxy interface to OSGi service registry. The proxy methods resolved as string to access i18n data.
+     *
+     * @param clazz
+     * @param localeSupplier
+     */
+    <T> T register(Class<T> clazz, Supplier<Locale> localeSupplier);
 
     /**
      * Unregister an i18N proxy interface from  OSGi service registry.

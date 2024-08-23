@@ -61,6 +61,11 @@ public class I18nServiceImpl implements I18nService {
 
     @Override
     public <T> T register(Class<T> clazz) {
+        return register(clazz, this.localeSupplier);
+    }
+
+    @Override
+    public <T> T register(Class<T> clazz, Supplier<Locale> localeSupplier) {
         MessageStreamLoader messageStreamLoader = new ClassLoaderBasedMessageStreamLoader(clazz.getClassLoader());
         ClassAndRequestContextLocaleBasedMessageResolver messageResolver =
                 new ClassAndRequestContextLocaleBasedMessageResolver(localeSupplier, clazz, messageStreamLoader, null);
