@@ -49,6 +49,11 @@ public class EnumI18nServiceImpl implements EnumI18nService {
     }
 
     public void register(Class<? extends Enum> clazz) {
+        register(clazz, this.localeSupplier);
+    }
+
+    @Override
+    public void register(Class<? extends Enum> clazz, Supplier<Locale> localeSupplier) {
         MessageStreamLoader messageStreamLoader = new ClassLoaderBasedMessageStreamLoader(clazz.getClassLoader());
         ClassAndRequestContextLocaleBasedMessageResolver messageResolver =
                 new ClassAndRequestContextLocaleBasedMessageResolver(localeSupplier, clazz, messageStreamLoader, null);
