@@ -20,11 +20,13 @@ public interface EnumI18nService {
      */
     void register(Class<? extends Enum> clazz, Supplier<Locale> localeSupplier);
 
+    void register(String className,  ClassLoader classLoader) throws ClassNotFoundException;
 
-    /**
-     * Unregister an Enm i18n message.
-     * @param clazz
-     */
+    void register(String className, Supplier<Locale> localeSupplier, ClassLoader classLoader) throws ClassNotFoundException;
+        /**
+         * Unregister an Enm i18n message.
+         * @param clazz
+         */
     void unregister(Class<? extends Enum> clazz);
 
     String getMessageForEnum(Enum entry, Object... args);

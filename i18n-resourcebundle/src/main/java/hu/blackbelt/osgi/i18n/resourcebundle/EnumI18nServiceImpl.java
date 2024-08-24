@@ -48,7 +48,14 @@ public class EnumI18nServiceImpl implements EnumI18nService {
         defaultLocale = I18NUtil.getLocaleFromBCP47(config.defaultLocale());
     }
 
+    @Override
     public void register(Class<? extends Enum> clazz) {
+        register(clazz, this.localeSupplier);
+    }
+
+    @Override
+    public void register(String className,  ClassLoader classLoader) throws ClassNotFoundException {
+        Class<? extends Enum> clazz = (Class<? extends Enum>) classLoader.loadClass(className);
         register(clazz, this.localeSupplier);
     }
 
@@ -58,6 +65,12 @@ public class EnumI18nServiceImpl implements EnumI18nService {
         ClassAndRequestContextLocaleBasedMessageResolver messageResolver =
                 new ClassAndRequestContextLocaleBasedMessageResolver(localeSupplier, clazz, messageStreamLoader, null);
         resolvers.put(clazz, messageResolver);
+    }
+
+    @Override
+    public void register(String className, Supplier<Locale> localeSupplier, ClassLoader classLoader) throws ClassNotFoundException {
+        Class<? extends Enum> clazz = (Class<? extends Enum>) classLoader.loadClass(className);
+        register(clazz, localeSupplier);
     }
 
     public void unregister(Class<? extends Enum> clazz) {
