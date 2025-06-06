@@ -153,7 +153,7 @@
         <dependency>
             <groupId>org.simplify4u.plugins</groupId>
             <artifactId>sign-maven-plugin</artifactId>
-            <version>0.3.1</version>
+            <version>1.1.0</version>
         </dependency>
 
         <dependency>
@@ -745,7 +745,7 @@
                     <plugin>
                         <groupId>org.simplify4u.plugins</groupId>
                         <artifactId>sign-maven-plugin</artifactId>
-                        <version>0.3.1</version>
+                        <version>1.1.0</version>
                         <executions>
                             <execution>
                                 <goals>
