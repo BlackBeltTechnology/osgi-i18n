@@ -24,7 +24,7 @@ gitGraph
     merge bugfix/JNG-4 id: "merge fix"
     checkout develop
     merge release/1.0-beta1 id: "merge release to dev"
-    checkout main
+    checkout master
     merge release/1.0-beta1 id: "release 1.0"
 ```
 
