@@ -22,6 +22,15 @@ Key facts:
 - [i18n-api/pom.xml](i18n-api/pom.xml): Public API — `I18nService`, `EnumI18nService` interfaces; `MessageResolver`, `MessageStreamLoader`, `LocaleProvider` SPI; `@Message`, `@MessageByKey`, `@MessageByEnum` annotations; `I18NUtil` for BCP47 locale parsing
 - [i18n-resourcebundle/pom.xml](i18n-resourcebundle/pom.xml): Implementation — `I18nServiceImpl` and `EnumI18nServiceImpl` OSGi components; Guava-cached locale resolvers; `.properties` file loading with locale fallback chain; `SimpleParameterTemplater` for placeholder substitution
 
+## Depends on
+
+- [osgi-utils](../osgi-utils): runtime/osgi-utils
+
+## Used by
+
+- [judo-runtime-core](../judo-runtime-core): runtime/judo-runtime-core
+- [osgi-validator](../osgi-validator): runtime/osgi-validator
+
 ## Optional
 
 - [pom.xml](pom.xml): Parent POM with shared dependencies, plugin config, and profiles
