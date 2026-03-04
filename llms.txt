@@ -1,0 +1,38 @@
+# OSGi I18N
+
+> Internationalization (i18n) services for OSGi-based Java applications — creates JDK dynamic proxies from user-defined interfaces where each method call resolves to a localized message from `.properties` files.
+
+Key facts:
+- Java 1.8 source compatibility, Java 21 build/runtime
+- Maven multi-module project, 2 modules
+- OSGi R6 with Declarative Services 1.3
+- Google Guava `LoadingCache` for lazy locale-based resolver caching
+- Supports enum message translation via `EnumI18nService`
+- License: Apache 2.0
+
+## Docs
+
+- [README.md](README.md): Project overview with architecture diagrams
+- [AGENTS.md](AGENTS.md): Developer guide with build commands, module details, and coding conventions
+- [CONTRIBUTING.md](CONTRIBUTING.md): Contribution guidelines and development workflow
+- [.github/CIFLOW.md](.github/CIFLOW.md): Detailed CI/CD pipeline documentation with flow diagrams
+
+## Modules
+
+- [i18n-api/pom.xml](i18n-api/pom.xml): Public API — `I18nService`, `EnumI18nService` interfaces; `MessageResolver`, `MessageStreamLoader`, `LocaleProvider` SPI; `@Message`, `@MessageByKey`, `@MessageByEnum` annotations; `I18NUtil` for BCP47 locale parsing
+- [i18n-resourcebundle/pom.xml](i18n-resourcebundle/pom.xml): Implementation — `I18nServiceImpl` and `EnumI18nServiceImpl` OSGi components; Guava-cached locale resolvers; `.properties` file loading with locale fallback chain; `SimpleParameterTemplater` for placeholder substitution
+
+## Depends on
+
+- [osgi-utils](../osgi-utils): runtime/osgi-utils
+
+## Used by
+
+- [judo-runtime-core](../judo-runtime-core): runtime/judo-runtime-core
+- [osgi-validator](../osgi-validator): runtime/osgi-validator
+
+## Optional
+
+- [pom.xml](pom.xml): Parent POM with shared dependencies, plugin config, and profiles
+- [.github/workflows/build.yml](.github/workflows/build.yml): Main CI pipeline (build, deploy, tag, release)
+- [.github/workflows/release.yml](.github/workflows/release.yml): Manual release trigger
