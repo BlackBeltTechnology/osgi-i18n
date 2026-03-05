@@ -24,12 +24,12 @@ Key facts:
 
 ## Depends on
 
-- [osgi-utils](../osgi-utils): runtime/osgi-utils
+- [osgi-utils](../osgi-utils): OSGi utility library — lifecycle tracking, config monitoring, ranked services
 
 ## Used by
 
-- [judo-runtime-core](../judo-runtime-core): runtime/judo-runtime-core
-- [osgi-validator](../osgi-validator): runtime/osgi-validator
+- [judo-runtime-core](../judo-runtime-core): Multi-module runtime engine — data access, business logic, REST, and security
+- [osgi-validator](../osgi-validator): Hibernate Validator wrapped as OSGi Declarative Services component
 
 ## Optional
 
