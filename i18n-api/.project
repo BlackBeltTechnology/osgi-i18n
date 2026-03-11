@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>i18n-impl</name>
+	<name>hu.blackbelt.osgi.i18n-i18n-api</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -22,7 +22,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1761313513613</id>
+			<id>1761313513611</id>
 			<name></name>
 			<type>30</type>
 			<matcher>
